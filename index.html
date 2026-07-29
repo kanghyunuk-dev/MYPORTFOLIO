@@ -1,12 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>강현욱 | 풀스택 개발자 포트폴리오</title>
+<meta name="description" content="강현욱의 포트폴리오. 풀스택 개발 경험과 프로젝트를 소개합니다.">
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>MY PORTFOLIO PAGE</h1>
-    HELLO WORLD
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">kang<span>hyunuk</span>.dev</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#timeline">Timeline</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">☰</button>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-title">강현욱,<br>
+        <span class="muted">만들면서 배우는</span> 풀스택 개발자입니다.</h1>
+      <div class="hero-actions">
+        <a href="#project" class="btn btn-primary">프로젝트 보기</a>
+        <a href="https://github.com/kanghyunuk-dev" target="_blank" rel="noopener" class="btn btn-ghost">GitHub</a>
+      </div>
+    </div>
+    <div class="code-card" aria-hidden="true">
+      <div class="code-titlebar">
+        <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        <span class="filename">Developer.java</span>
+      </div>
+      <pre><span class="kw">public class</span> <span class="fn">Developer</span> {
+
+  <span class="kw">private</span> String stack = <span class="str">"Full-Stack"</span>;
+
+  <span class="kw">public</span> Service <span class="fn">build</span>() {
+    <span class="cm">// 만들면서 배운다</span>
+    <span class="kw">return</span> <span class="kw">new</span> <span class="fn">Project</span>();
+  }
+}</pre>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="container">
+    <p class="eyebrow">About</p>
+    <h2 class="section-title">저는 이런 개발자입니다</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          궁금한 게 있으면 일단 찾아보고 만들어보는 편입니다.
+          모든 걸 완벽히 이해하고 시작하기보다, 필요한 도구를 적극적으로 활용해 먼저 형태를 만들고
+          막히는 부분을 하나씩 채워나가는 방식으로 일합니다.
+        </p>
+        <p>
+          공공데이터 활용 풀스택 개발자 양성과정에서 웹 개발을 배웠고,
+          그 과정을 통해 하나의 서비스가 만들어지는 흐름 전체를 경험했습니다.
+        </p>
+        <p>
+          문제를 만났을 때 끝까지 붙잡고 해결하는 태도를 중요하게 생각합니다.
+        </p>
+      </div>
+      <aside class="about-facts">
+        <dl>
+          <dt>Base</dt><dd>Daegu, Korea</dd>
+          <dt>Style</dt><dd>호기심 · 분석적 · 실행</dd>
+          <dt>Email</dt><dd>hukang.dev@gmail.com</dd>
+          <dt>GitHub</dt><dd>@kanghyunuk-dev</dd>
+        </dl>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <p class="eyebrow">Skills</p>
+    <h2 class="section-title">기술 스택</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>BACKEND</h3>
+        <div class="skill-tags">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">Spring Security</span>
+          <span class="tag">JWT</span>
+          <span class="tag">Hibernate/JPA</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>FRONTEND</h3>
+        <div class="skill-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">jQuery</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>DATABASE</h3>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>INFRA / DEVOPS</h3>
+        <div class="skill-tags">
+          <span class="tag">Docker</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">AWS EC2</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">Let's Encrypt</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="project">
+  <div class="container">
+    <p class="eyebrow">Project</p>
+    <h2 class="section-title">프로젝트</h2>
+
+    <div class="project-tabs" role="tablist">
+      <button type="button" class="project-tab active" role="tab" aria-selected="true" data-target="panel-valuepick">Valuepick</button>
+      <button type="button" class="project-tab" role="tab" aria-selected="false" disabled title="준비 중">추가 예정</button>
+    </div>
+
+    <div class="project-panel active" id="panel-valuepick" role="tabpanel">
+
+      <div class="project-header">
+        <div class="project-title-row">
+          <h3>가치투자 지표 기반 종목 스크리닝 서비스</h3>
+          <span class="project-badge">4인 팀 · 팀장</span>
+        </div>
+        <p class="project-summary">
+          DART 재무제표, 공공데이터포털 주가, KRX 지수, 한국수출입은행 환율을 매일 자동 수집해
+          PER·PBR·ROE·Piotroski F-Score 등 투자지표를 계산하고, 다팩터 가중 스코어링으로
+          저평가 우량주 TOP100을 추천하는 서비스입니다. 개인 투자일지(매수/매도 기록, 손익 관리) 기능도 함께 제공합니다.
+        </p>
+        <div class="project-meta">
+          <span class="tag">Java</span>
+          <span class="tag">Spring Boot</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">HTML/CSS/JS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Jenkins</span>
+          <span class="tag">AWS EC2</span>
+        </div>
+        <div class="project-links">
+          <a href="https://www.valuepick.cloud" target="_blank" rel="noopener">서비스 바로가기 ↗</a>
+          <a href="https://github.com/project-valuepick/valuepick" target="_blank" rel="noopener">GitHub 저장소 ↗</a>
+        </div>
+      </div>
+
+      <div class="demo-gallery">
+        <div class="demo-item">
+          <video src="assets-valuepick/video/mainpage-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">홈 — 실시간 시세·랭킹 위젯 (10초 주기 갱신)</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/listpage-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">종목 스크리닝 — 필터·정렬·페이징</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/detailpage-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">종목 상세 — 재무제표 추이, Canvas 차트</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/top100-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">TOP100 — Piotroski F-Score 가중 스코어링</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/login-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">회원가입/로그인 — JWT 인증</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/mypage-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">마이페이지 — 정보 수정, 회원탈퇴</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/favorite-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">관심종목 등록/해제</p>
+        </div>
+        <div class="demo-item">
+          <video src="assets-valuepick/video/invest-1.mp4" loop muted playsinline preload="metadata"></video>
+          <p class="demo-caption">투자일지 — 매수/매도 기록, 손익 관리</p>
+        </div>
+      </div>
+
+      <h3 style="font-size:20px; margin-bottom:20px;">담당 역할</h3>
+      <div class="role-list">
+        <div class="role-card">
+          <h4>팀장 — 기획 및 총괄</h4>
+          <p>서비스 주제와 핵심 기능을 기획하고, 팀원별 역할과 개발 일정을 관리했습니다. 개발이 진행되며 팀원들의 의견이나 진행 상황에 따라 기능 범위와 일정, 역할을 유동적으로 조정하며 프로젝트를 이끌었습니다.</p>
+        </div>
+        <div class="role-card">
+          <h4>인증/회원 시스템 (Spring Security + JWT)</h4>
+          <p>궁금한 부분을 계속 찾아가며 JWT 기반 로그인/회원가입, 마이페이지 인증 흐름을 구현했습니다. 구현을 마친 뒤에는 토큰 발급·검증 과정을 따로 복습하며 동작 원리를 이해하려 했습니다.</p>
+        </div>
+        <div class="role-card">
+          <h4>전역 예외처리 · API 문서화</h4>
+          <p>전역 예외처리(GlobalExceptionHandler)와 Swagger 문서화를 이번 프로젝트에서 처음 다뤄봤습니다. 컨트롤러마다 예외를 따로 처리하지 않고 한 곳에서 응답 형식을 통일할 수 있다는 것, API 스펙을 문서로 남겨 협업 비용을 줄일 수 있다는 것을 직접 적용해보며 익혔습니다.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="container">
+    <p class="eyebrow">Journey</p>
+    <h2 class="section-title">학습 과정</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <p class="timeline-date">국비지원 교육과정</p>
+        <h4>공공데이터 활용 풀스택 개발자 양성과정 수강</h4>
+        <p>HTML/CSS/JS, Java, Spring Boot, MySQL, React, Docker, Jenkins, AWS EC2 등 웹 개발 전반을 학습했습니다.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">팀 프로젝트</p>
+        <h4>Valuepick 기획 및 개발 (팀장)</h4>
+        <p>4인 팀을 꾸려 가치투자 스크리닝 서비스를 기획하고, 인증/보안/예외처리 파트를 담당해 개발했습니다.</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-date">1차 배포</p>
+        <h4>AWS EC2 + Docker + Jenkins로 실서비스 배포</h4>
+        <p>CI/CD 파이프라인을 구축해 valuepick.cloud로 실제 서비스를 배포했습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="container">
+    <p class="eyebrow">Contact</p>
+    <div class="contact-links">
+      <button type="button" class="btn btn-ghost" id="emailCopyBtn" data-email="hukang.dev@gmail.com">✉ hukang.dev@gmail.com</button>
+      <a href="https://github.com/kanghyunuk-dev" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 Kang Hyunuk
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>
