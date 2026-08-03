@@ -9,9 +9,8 @@
 <script>
   (function () {
     var saved = localStorage.getItem('theme');
-    if (saved === 'light' || saved === 'dark') {
-      document.documentElement.setAttribute('data-theme', saved);
-    }
+    var theme = (saved === 'light' || saved === 'dark') ? saved : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
 </head>
