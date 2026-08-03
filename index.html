@@ -6,6 +6,14 @@
 <title>강현욱 | 풀스택 개발자 포트폴리오</title>
 <meta name="description" content="강현욱의 포트폴리오. 풀스택 개발 경험과 프로젝트를 소개합니다.">
 <link rel="stylesheet" href="css/style.css">
+<script>
+  (function () {
+    var saved = localStorage.getItem('theme');
+    if (saved === 'light' || saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  })();
+</script>
 </head>
 <body>
 
@@ -19,7 +27,13 @@
       <li><a href="#timeline">Timeline</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">☰</button>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="다크/라이트 모드 전환" title="다크/라이트 모드 전환">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">⚡</span>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">☰</button>
+    </div>
   </div>
 </nav>
 
@@ -199,7 +213,7 @@
         </div>
       </div>
 
-      <h3 style="font-size:20px; margin-bottom:20px;">담당 역할</h3>
+      <h3 class="subsection-title">담당 역할</h3>
       <div class="role-list">
         <div class="role-card">
           <h4>팀장 — 기획 및 총괄</h4>
@@ -213,6 +227,63 @@
           <h4>전역 예외처리 · API 문서화</h4>
           <p>전역 예외처리(GlobalExceptionHandler)와 Swagger 문서화를 이번 프로젝트에서 처음 다뤄봤습니다. 컨트롤러마다 예외를 따로 처리하지 않고 한 곳에서 응답 형식을 통일할 수 있다는 것, API 스펙을 문서로 남겨 협업 비용을 줄일 수 있다는 것을 직접 적용해보며 익혔습니다.</p>
         </div>
+      </div>
+
+      <h3 class="subsection-title">트러블슈팅</h3>
+      <div class="trouble-accordion">
+        <details class="trouble-item">
+          <summary>
+            <span class="tag">JWT · Access Token</span>
+            <span class="trouble-item-title">Access Token 만료 시 강제 로그아웃되던 문제</span>
+          </summary>
+          <div class="trouble-body">
+            <p class="trouble-step"><strong>문제</strong> — Access Token은 보안을 위해 만료 시간을 짧게 두는 게 일반적입니다.
+            그런데 그렇게 두면 서비스를 이용하는 도중 토큰이 만료되어 API 요청이 401로 실패하고, 곧바로 로그인 페이지로
+            튕기는 문제가 생깁니다. 인증 흐름을 점검하면서 이 문제가 실제로 재현되는 걸 확인했습니다.</p>
+            <p class="trouble-step"><strong>변화</strong> — 프론트의 <code>authFetch</code> 요청 함수가 401 응답을 받으면
+            에러 코드가 <code>ACCESS_TOKEN_EXPIRED</code>인지 먼저 확인하고, 맞다면 저장해둔 RefreshToken으로 새
+            AccessToken을 발급받아 원래 요청을 자동으로 재시도하도록 바뀌었습니다. RefreshToken마저 없거나 만료된 경우에만
+            로그인 페이지로 이동합니다.</p>
+            <p class="trouble-step"><strong>배운 점</strong> — 토큰 만료를 단순 에러로 끝내지 않고 갱신 흐름으로 이어지게
+            설계할 수 있다는 것, 그리고 Access/Refresh Token을 분리해 두는 이유가 여기에 있다는 걸 알게 됐습니다.</p>
+          </div>
+        </details>
+
+        <details class="trouble-item">
+          <summary>
+            <span class="tag">JWT · 회원탈퇴</span>
+            <span class="trouble-item-title">회원탈퇴 후에도 기존 토큰으로 인증되던 문제</span>
+          </summary>
+          <div class="trouble-body">
+            <p class="trouble-step"><strong>문제</strong> — 회원탈퇴를 소프트 삭제(soft delete)로 구현하면, 이미 발급된
+            Access Token은 탈퇴 여부와 무관하게 만료 전까지 계속 유효합니다. JWT는 서버가 상태를 갖지 않아도 검증되는 게
+            장점인데, 이 경우엔 탈퇴한 계정이 토큰이 살아있는 동안 API를 계속 쓸 수 있다는 문제로 이어질 수 있습니다.</p>
+            <p class="trouble-step"><strong>변화</strong> — <code>JWTTokenProvider</code>와 <code>PrincipalDetailsService</code>의
+            유저 조회 로직이 <code>existsByEmailAndDeletedAtIsNull</code> / <code>findByEmailAndDeletedAtIsNull</code>로
+            바뀌어, 토큰을 검증할 때마다 탈퇴 여부를 함께 확인하도록 반영됐습니다.</p>
+            <p class="trouble-step"><strong>배운 점</strong> — JWT의 "DB 조회 없이 검증 가능"하다는 장점과 "탈퇴를 즉시
+            반영해야 하는" 요구사항이 충돌할 수 있다는 것, 그리고 이럴 때는 무상태성을 일부 포기하고 매 요청마다 DB를
+            재확인하는 선택도 가능하다는 걸 확인했습니다.</p>
+          </div>
+        </details>
+
+        <details class="trouble-item">
+          <summary>
+            <span class="tag">Docker · Nginx</span>
+            <span class="trouble-item-title">설정 파일 노출을 막으려다 배포 빌드가 깨진 문제</span>
+          </summary>
+          <div class="trouble-body">
+            <p class="trouble-step"><strong>문제</strong> — 배포 환경을 점검하다가 nginx.conf와 Dockerfile이 정적 파일로
+            그대로 웹에 노출되고 있다는 걸 발견했습니다. <code>.dockerignore</code>에 해당 파일들을 추가해서 막으려 했는데,
+            그렇게 하니 Docker 빌드 자체가 깨졌습니다. <code>.dockerignore</code>가 빌드 컨텍스트에서 파일을 아예
+            제외해버리면서, Dockerfile 안에서 그 설정 파일을 <code>COPY</code>하는 단계도 함께 실패한 것이었습니다.</p>
+            <p class="trouble-step"><strong>해결</strong> — 방법을 바꿔 <code>.dockerignore</code>는 원래대로 되돌리고,
+            대신 Dockerfile 안에서 정적 파일 복사가 끝난 뒤 <code>RUN rm -f</code>로 노출되면 안 되는 설정 파일만
+            사후에 삭제하도록 했습니다.</p>
+            <p class="trouble-step"><strong>배운 점</strong> — 빌드에 필요한 시점(빌드 컨텍스트)과 최종 이미지에
+            남으면 안 되는 시점(런타임)은 서로 다르며, 그래서 "제외"가 아니라 "복사 후 삭제"로 접근을 바꿔야 했습니다.</p>
+          </div>
+        </details>
       </div>
 
     </div>
@@ -246,7 +317,8 @@
 
 <section id="contact" class="contact-section">
   <div class="container">
-    <p class="eyebrow">Contact</p>
+    <h2 class="sr-only">Contact</h2>
+    <p class="eyebrow" aria-hidden="true">Contact</p>
     <div class="contact-links">
       <button type="button" class="btn btn-ghost" id="emailCopyBtn" data-email="hukang.dev@gmail.com">✉ hukang.dev@gmail.com</button>
       <a href="https://github.com/kanghyunuk-dev" target="_blank" rel="noopener" class="btn btn-ghost">GitHub ↗</a>

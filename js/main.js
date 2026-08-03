@@ -1,3 +1,19 @@
+// Theme toggle (dark/light)
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+
+function getCurrentTheme() {
+  const stored = rootEl.getAttribute('data-theme');
+  if (stored) return stored;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+themeToggle.addEventListener('click', () => {
+  const next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+  rootEl.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
+
 // Mobile nav toggle
 const navToggle = document.getElementById('navToggle');
 const navLinks = document.getElementById('navLinks');
