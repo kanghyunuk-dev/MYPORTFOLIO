@@ -1,0 +1,53 @@
+npm warn deprecated whatwg-encoding@2.0.0: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+Starting up http-server, serving ./
+
+http-server version: 14.1.1
+
+http-server settings: 
+CORS: disabled
+Cache: -1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8787
+Hit CTRL-C to stop the server
+
+[2026-10-05T09:38:32.118Z]  "GET /index.html" "curl/8.21.0"
+[2026-10-05T09:38:42.494Z]  "GET /" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.543Z]  "GET /css/style.css" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.544Z]  "GET /js/main.js" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.774Z]  "GET /assets-valuepick/video/mainpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.775Z]  "GET /assets-valuepick/video/listpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.780Z]  "GET /assets-valuepick/video/detailpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.782Z]  "GET /assets-valuepick/video/top100-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.783Z]  "GET /assets-valuepick/video/login-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.786Z]  "GET /assets-valuepick/video/mypage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.798Z]  "GET /assets-valuepick/video/favorite-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.801Z]  "GET /assets-valuepick/video/invest-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.818Z]  "GET /favicon.ico" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:42.819Z]  "GET /favicon.ico" Error (404): "Not found"
+[2026-10-05T09:38:44.593Z]  "GET /assets-valuepick/video/listpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:52.599Z]  "GET /assets-valuepick/video/top100-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:52.600Z]  "GET /assets-valuepick/video/detailpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:52.608Z]  "GET /assets-valuepick/video/detailpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.381Z]  "GET /assets-moneylog/img/login.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.382Z]  "GET /assets-moneylog/img/home.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.383Z]  "GET /assets-moneylog/img/transaction.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.383Z]  "GET /assets-moneylog/img/budgets.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.384Z]  "GET /assets-moneylog/img/dashboard.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.384Z]  "GET /assets-moneylog/img/goals.png" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.389Z]  "GET /assets-valuepick/video/login-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.391Z]  "GET /assets-valuepick/video/mypage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.392Z]  "GET /assets-valuepick/video/invest-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:38:54.392Z]  "GET /assets-valuepick/video/favorite-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:39:27.422Z]  "GET /assets-valuepick/video/mainpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:39:27.423Z]  "GET /assets-valuepick/video/listpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:39:27.424Z]  "GET /assets-valuepick/video/detailpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:39:27.425Z]  "GET /assets-valuepick/video/top100-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:39:27.458Z]  "GET /assets-valuepick/video/listpage-1.mp4" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"
+[2026-10-05T09:48:10.096Z]  "GET /index.html" "curl/8.21.0"

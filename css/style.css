@@ -687,12 +687,73 @@ button.btn {
   background: #000;
 }
 
+.demo-item-static {
+  cursor: default;
+}
+
+.demo-item-static::after {
+  content: none;
+}
+
+.demo-item-static img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  object-position: top;
+  display: block;
+  background: #fff;
+}
+
 .demo-caption {
   padding: 10px 14px;
   font-family: var(--font-mono);
   font-size: 12px;
   color: var(--text-secondary);
   border-top: 1px solid var(--border);
+}
+
+/* Demo feature accordion (image caption that expands into a feature description) */
+.demo-feature {
+  border-top: 1px solid var(--border);
+}
+
+.demo-feature summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.demo-feature summary::-webkit-details-marker {
+  display: none;
+}
+
+.demo-feature summary::before {
+  content: "›";
+  font-size: 15px;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.demo-feature[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.demo-feature summary:hover {
+  color: var(--text-primary);
+}
+
+.demo-feature p {
+  padding: 0 14px 14px 30px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
 /* Role cards */
